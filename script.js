@@ -16,3 +16,4 @@ for (let index = 0; index < 25; index+= 1) {
     document.querySelector('#pixel-board').appendChild(pixel);
 }
 
+const pixelsDiv = document.querySelectorAll('.pixel');
