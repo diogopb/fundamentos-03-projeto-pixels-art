@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
 * {
-    margin: 3px;
+    margin: 10px;
 }
 
 h1 {
@@ -9,30 +9,19 @@ h1 {
     text-align: center;
 }
 
-#color-palette {
+#color-palette{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#color-palette div{
     margin: 50px;
     margin-top: 30px;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
+    margin: 10px;
     float: left;
-}
-
-#red {
     border: solid black 1px;
-    color: red;
-}
+  }
 
-#yellow {
-    border: solid black 1px;
-    color: yellow;
-}
-
-#blue {
-    border: solid black 1px;
-    color: blue;
-}
-
-#black {
-    border: solid black 1px;
-    color: black;
-}
