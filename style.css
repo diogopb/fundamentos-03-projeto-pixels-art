@@ -28,8 +28,9 @@ h1 {
     display: grid;
     grid-template-columns: repeat(5, 40px);
     grid-template-rows: repeat(5, 40px);
-    gap: 0;
-  }
+    gap: 1px;
+    margin-left: 40%;
+}
 
   .pixel {
     width: 40px;
