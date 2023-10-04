@@ -12,10 +12,30 @@ backBlue.style.backgroundColor = 'blue';
 
 const body = document.querySelector('body');
 
+for (let index = 0; index < 25; index += 1) {
+    const pixel = document.createElement('div');
+    pixel.classList.add('pixel');
+    document.querySelector('#pixel-board').appendChild(pixel);
+}
 
-    for (let index = 0; index < 25; index += 1) {
-        const pixel = document.createElement('div');
-        pixel.classList.add('pixel');
-        document.querySelector('#pixel-board').appendChild(pixel);
+function selectColor(element) {
+    const colors = document.querySelectorAll('.color');
+    for (let index = 0; index < colors.length; index += 1) {
+        colors[index].classList.remove('selected');
     }
+    element.classList.add('selected');
+  }
+
+  const pxColors = document.querySelectorAll('.color');
+  for (let index = 0; index < pxColors.length; index += 1) {
+    const colors2 = pxColors[index];
+    colors2.addEventListener('click', function() {
+        selectColor(colors2);
+        chooseColor = window.getComputedStyle(colors2).backgroundColor;
+    });
+  }
+  
+  let chooseColor = 'black';
+  
+  
 
