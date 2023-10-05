@@ -42,8 +42,14 @@ const fillPixel = (fill) => {
     pixel.style.backgroundColor = chooseColor;
 }
 
-
 const elementsGrid = document.querySelectorAll('.pixel');
 elementsGrid.forEach(function(elements) {
     elements.addEventListener('click', fillPixel)
+});
+
+const clearGrid = document.getElementById('clear-board');
+clearGrid.addEventListener('click', () => {
+    elementsGrid.forEach((function(elements){
+        elements.style.backgroundColor = 'white';
+    }));
 });

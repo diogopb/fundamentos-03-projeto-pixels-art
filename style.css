@@ -1,42 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
 * {
-    margin: 10px;
+  margin: 10px;
 }
 
 h1 {
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
 }
 
-#color-palette{
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+#color-palette {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-#color-palette div{
-    margin: 50px;
-    margin-top: 30px;
-    width: 80px;
-    height: 80px;
-    margin: 10px;
-    border: solid black 1px;
-    cursor: pointer;
-  }
-
-  #pixel-board {
-    display: grid;
-    grid-template-columns: repeat(5, 40px);
-    grid-template-rows: repeat(5, 40px);
-    gap: 1px;
-    margin-left: 41%;
-    background-color: white;
+#color-palette div {
+  margin: 50px;
+  margin-top: 30px;
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  border: solid black 1px;
+  cursor: pointer;
 }
 
-  .pixel {
-    width: 40px;
-    height: 40px;
-    border: solid black 1px;
-    background-color: white;
-  }
+#black:hover {
+  border: 3px solid black;
+}
+#red:hover {
+  border: 3px solid red;
+}
+#yellow:hover{
+  border: 3px solid yellow;
+}
+#blue:hover {
+  border: 3px solid blue;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  place-items: center;  
+}
+
+#clear-board, #button-random-color {
+  background: transparent;
+  height: 40px;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+#clear-board:hover, #button-random-color:hover {
+  cursor: pointer;
+  border: 3px solid black;
+}
+
+#pixel-board {
+  display: grid;
+  grid-template-columns: repeat(5, 40px);
+  grid-template-rows: repeat(5, 40px);
+  gap: 1px;
+  margin-left: 41%;
+  background-color: white;
+}
+
+.pixel {
+  width: 40px;
+  height: 40px;
+  border: solid black 1px;
+  background-color: white;
+}
