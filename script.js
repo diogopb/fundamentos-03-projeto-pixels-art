@@ -10,7 +10,7 @@ backYellow.style.backgroundColor = 'yellow';
 const backBlue = document.getElementById("blue");
 backBlue.style.backgroundColor = 'blue';
 
-const body = document.querySelector('body');
+// const body = document.querySelector('body');
 
 for (let index = 0; index < 25; index += 1) {
     const pixel = document.createElement('div');
@@ -18,24 +18,32 @@ for (let index = 0; index < 25; index += 1) {
     document.querySelector('#pixel-board').appendChild(pixel);
 }
 
-function selectColor(element) {
+let chooseColor = '';
+
+const selectColor = (color) => {
     const colors = document.querySelectorAll('.color');
     for (let index = 0; index < colors.length; index += 1) {
         colors[index].classList.remove('selected');
     }
-    element.classList.add('selected');
-  }
+    color.classList.add('selected');
+}
 
-  const pxColors = document.querySelectorAll('.color');
-  for (let index = 0; index < pxColors.length; index += 1) {
+const pxColors = document.querySelectorAll('.color');
+for (let index = 0; index < pxColors.length; index += 1) {
     const colors2 = pxColors[index];
-    colors2.addEventListener('click', function() {
+    colors2.addEventListener('click', function () {
         selectColor(colors2);
         chooseColor = window.getComputedStyle(colors2).backgroundColor;
     });
-  }
-  
-  let chooseColor = 'black';
-  
-  
+}
 
+const fillPixel = (fill) => {
+    const pixel = fill.target;
+    pixel.style.backgroundColor = chooseColor;
+}
+
+
+const elementsGrid = document.querySelectorAll('.pixel');
+elementsGrid.forEach(function(elements) {
+    elements.addEventListener('click', fillPixel)
+});
