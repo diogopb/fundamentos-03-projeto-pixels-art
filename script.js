@@ -68,6 +68,7 @@ function changePalette() {
   aleatoryBottom.addEventListener('click', changePalette);
 
 
+
 // for (let index = 0; index < colorsArray.length; index += 1) {
 //     const j = Math.floor(Math.random() * (index + 1));
 //     [colorsArray[index], random[j]] = [random[j], random[index]];
