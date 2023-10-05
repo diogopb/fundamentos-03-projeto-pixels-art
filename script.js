@@ -43,13 +43,34 @@ const fillPixel = (fill) => {
 }
 
 const elementsGrid = document.querySelectorAll('.pixel');
-elementsGrid.forEach(function(elements) {
+elementsGrid.forEach(function (elements) {
     elements.addEventListener('click', fillPixel)
 });
 
 const clearGrid = document.getElementById('clear-board');
 clearGrid.addEventListener('click', () => {
-    elementsGrid.forEach((function(elements){
+    elementsGrid.forEach((function (elements) {
         elements.style.backgroundColor = 'white';
     }));
 });
+
+function changePalette() {
+    const colorsPalette = document.getElementById('color-palette');
+    const elementColors = colorsPalette.querySelectorAll('.color');
+    const colorsArray = Array.from(elementColors);
+
+    colorsArray.sort(() => Math.random() - 1);
+    colorsArray.forEach(function(random) {
+        colorsPalette.appendChild(random);
+    });
+  }
+  const aleatoryBottom = document.getElementById('button-random-color');
+  aleatoryBottom.addEventListener('click', changePalette);
+
+
+// for (let index = 0; index < colorsArray.length; index += 1) {
+//     const j = Math.floor(Math.random() * (index + 1));
+//     [colorsArray[index], random[j]] = [random[j], random[index]];
+// }
+
+
